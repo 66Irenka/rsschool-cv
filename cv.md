@@ -88,3 +88,7 @@ University: Uman National University of Horticulture
 Master's degree
 The Faculty of Management
 Courses: Course of Frontend 2023-2024 with mentor
+
+## English.
+
+I have an intermediate level of English, I practice speaking with a native speaker from the USA
