@@ -10,3 +10,10 @@
 ## About me.
 
 I'm very creative persone. I want improve my developing skills with yout school.
+
+## Skills.
+
+- HTML
+- CSS
+- JavaScript (basics)
+- GitHub
