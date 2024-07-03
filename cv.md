@@ -1,7 +1,5 @@
 # Iryna Pavlenko
 
-=======
-
 ## Contacts.
 
 - Github: https://github.com/66Irenka
