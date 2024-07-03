@@ -81,3 +81,10 @@ async function getRandomCats(tag) {
 ## Experience.
 
 I don't have real practice yet
+
+## Education.
+
+University: Uman National University of Horticulture
+Master's degree
+The Faculty of Management
+Courses: Course of Frontend 2023-2024 with mentor
