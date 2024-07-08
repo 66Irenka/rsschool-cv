@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iryna Pavlenko - Resume</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .left-column {
+        background-color: #ffa500;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .right-column {
+        background-color: #c7c3c3;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .footer {
+        text-align: center;
+        margin-top: auto;
+        padding: 20px 0;
+        background-color: #333;
+        color: #fff;
+        width: calc(100% - 40px);
+        max-width: 800px;
+        margin: 0 auto;
+        height: 100px;
+        line-height: 2;
+      }
+      .social-links {
+        margin-top: 10px;
+      }
+      .social-links a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+      .profile-img {
+        max-width: 100%;
+        border-radius: 50%;
+        margin-bottom: 10px;
+      }
+      .left-column h3,
+      .left-column p {
+        color: brown;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-column">
+        <img
+          src="https://scontent.fiev7-3.fna.fbcdn.net/v/t39.30808-6/424666991_18283966006090011_5161024896389295398_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=O6axyo-ThGcQ7kNvgEXa-8A&_nc_ht=scontent.fiev7-3.fna&oh=00_AYBerh_WmAvUwonm4Z2ddxrD23IslOfCIF12Ewfeob4c4Q&oe=6690E1F7"
+          alt="Iryna Pavlenko"
+          class="profile-img"
+        />
+        <h2>Iryna Pavlenko</h2>
+        <h3>Contacts</h3>
+        <ul>
+          <li>Github: <a href="https://github.com/66Irenka">66Irenka</a></li>
+          <li>Discord: irynapavl91 (@irynapavl91)</li>
+        </ul>
+        <h3>About me</h3>
+        <p>
+          I'm a very creative person. I want to improve my developing skills
+          with your school.
+        </p>
+        <h3>Skills</h3>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript (basics)</li>
+          <li>GitHub</li>
+        </ul>
+        <h3>Experience</h3>
+        <p>I don't have real practice yet.</p>
+        <h3>Education</h3>
+        <p>
+          University: Uman National University of Horticulture<br />
+          Master's degree in the Faculty of Management<br />
+          Courses: Course of Frontend 2023-2024 with mentor
+        </p>
+        <h3>English</h3>
+        <p>
+          I have an intermediate level of English, I practice speaking with a
+          native speaker from the USA
+        </p>
+      </div>
+      <div class="right-column">
+        <h3>Code Example</h3>
+        <pre><code>
+const options = {
+  method: "GET",
+};
+
+const url = "https://api.thecatapi.com/v1/images/search";
+const section = document.querySelector(".container");
+const button = document.querySelector(".btn");
+const tagInput = document.getElementById("tagInput");
+const tagCheckbox = document.getElementById("tagCheckbox");
+
+button.addEventListener("click", function () {
+  const tag = tagInput.value.trim();
+  getRandomCats(tag);
+});
+
+tagCheckbox.addEventListener("change", function () {
+  tagInput.disabled = !tagCheckbox.checked;
+});
+
+// We getting the first cat image when the page loads
+
+window.onload = function () {
+  getRandomCats();
+};
+
+function randomCatPhoto(json) {
+  let photo = json[0].url;
+  section.classList.add("cats");
+
+  let image = document.createElement("img");
+  image.src = photo;
+  image.classList.add("random_cats");
+  image.alt = photo;
+  section.appendChild(image);
+}
+
+async function getRandomCats(tag) {
+  section.innerHTML = "";
+
+  let apiUrl = "https://api.thecatapi.com/v1/images/search";
+
+  if (tag) {
+    apiUrl += `?tag=${tag}`;
+  }
+
+  try {
+    const response = await fetch(apiUrl, options);
+    const json = await response.json();
+    console.log("JSON:", json);
+    return randomCatPhoto(json);
+  } catch (e) {
+    console.log("Це помилка");
+    console.log(e);
+  }
+}
+        </code></pre>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="social-links">
+        <a href="https://github.com/66Irenka">GitHub</a>
+        <a href="https://www.linkedin.com/in/iryna-pavlenko-106702192/"
+          >LinkedIn</a
+        >
+        <a href="https://www.facebook.com/irenmetal/">Facebook</a>
+        <a href="https://www.instagram.com/pav.irinka/">Instagram</a>
+        <a href="https://rs.school/courses/javascript-ru"
+          >RS School JavaScript Course</a
+        >
+      </div>
+    </div>
+  </body>
+</html>
